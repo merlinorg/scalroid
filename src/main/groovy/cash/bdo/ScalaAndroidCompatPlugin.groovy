@@ -779,10 +779,11 @@ class ScalaAndroidCompatPlugin implements Plugin<Project> {
                         scalaCompile.classpath += project.files(rFile.outputs.files.find { it.path.endsWith("${variant.name}/R.jar") })
                     }
                     // 把生成的`BuildConfig`加入依赖。同理，还可以加入别的。
-                    project.tasks.named(buildConfigTaskName) { Task buildConfig -> // ...
-                        scalaCompile.source(buildConfig)
-                        evictCompileOutputForSrcTask(scalaDeduplicate, project, scalaCompile, buildConfig, scalroid, "src/${main}/java/", "src/${main}/kotlin/", "src/${sourceSet.name}/java/", "src/${sourceSet.name}/kotlin/")
-                    }
+// merlin: these configs appear to have vanished
+//                    project.tasks.named(buildConfigTaskName) { Task buildConfig -> // ...
+//                        scalaCompile.source(buildConfig)
+//                        evictCompileOutputForSrcTask(scalaDeduplicate, project, scalaCompile, buildConfig, scalroid, "src/${main}/java/", "src/${main}/kotlin/", "src/${sourceSet.name}/java/", "src/${sourceSet.name}/kotlin/")
+//                    }
                     if (dataBinding) {
                         scalaCompile.source(dataBinding.outputs.files.filter { it.path.contains("/generated/") && it.path.contains("/${variant.name}/") })
                         evictCompileOutputForSrcTask(scalaDeduplicate, project, scalaCompile, dataBinding, null /*置为 null，避免重复计算。*/)
