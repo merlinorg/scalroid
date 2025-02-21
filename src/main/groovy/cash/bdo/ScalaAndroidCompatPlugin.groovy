@@ -764,7 +764,7 @@ class ScalaAndroidCompatPlugin implements Plugin<Project> {
                     final rFile = project.tasks.findByName(rFileTaskName)
                     final dataBinding = project.tasks.findByName(dataBindingGenBaseTaskName)
                     if (processRes) {
-                        final files = project.files(processRes.outputs.files.find { it.path.endsWith("${variant.name}/R.jar") })
+                        final files = project.files(processRes.outputs.files.find { it.path.endsWith("${processRes.name}/R.jar") })
                         scalaCompile.dependsOn processRes
                         scalaCompile.classpath += files
 
