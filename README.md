@@ -1,5 +1,9 @@
 # Scalroid
 
+# Work-in-progress fork
+
+Updated for compatibility with more recent gradle/android plugin.
+
 [![Join the chat at https://gitter.im/scalroid/community](https://badges.gitter.im/scalroid/community.svg)](https://gitter.im/scalroid/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [**`Discord#scala-android`**](https://discord.gg/RrtXCpsUZ5)
